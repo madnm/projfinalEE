@@ -1,0 +1,33 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"><head>
+        <title>Bem vindo</title>
+        <meta>
+    </head>
+    <body>
+        Bem vindo, #{gestaoUser.username}!
+        
+        <c:if test="#{gestaoUser.tipoUser == 1}"> 
+           Criar Inquerito;
+           Consultar Inquerito;
+           Responder ao inquerito;
+           Estatisticas.
+           
+        </c:if>
+        
+          <c:if test="{#{gestaoUser.username == '2}">
+           Criar Inquerito;
+           Gerir Utilizadores;
+           Consultar Inquerito;
+           Responder ao inquerito;
+           Estatisticas.
+           
+        </c:if>
+        
+      
+        <c:otherwise>
+            <a href="/DisplayBlobExample?userId=#{user.userId}" target="_blank" <="" a="">
+            <img src="/DisplayBlobExample?userId=#{user.userId}">
+        </a></c:otherwise><a href="/DisplayBlobExample?userId=#{user.userId}" target="_blank" <="" a="">
+
+    
+
+</a></body></html>

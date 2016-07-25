@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<jpa:entity-mappings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://jcp.org/en/jsr/detail?id=270" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jpa="http://java.sun.com/xml/ns/persistence/orm" v="1.5.4" xs="false" id="_146944858615347" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm orm_2_1.xsd">
+    <jpa:entity xre="false" sm="false" abs="false" class="Utilizador" visibile="true" minimized="false" rootElement="_146944858615347" id="_1469448602943">
+        <jpa:attributes>
+            <basic attribute-type="String" visibile="true" name="nome" id="_146944862352350"/>
+            <basic attribute-type="Integer" visibile="true" name="telefone" id="_146945106134951"/>
+            <basic attribute-type="String" visibile="true" name="username" id="_146945106179052"/>
+            <basic attribute-type="String" visibile="true" name="password" id="_146945106361453"/>
+            <basic attribute-type="String" visibile="true" name="email" id="_146945116269254"/>
+            <many-to-one optional="true" primaryKey="false" connected-entity-id="_1469451944554" visibile="true" name="tipo_Utilizador" id="_146945204361973"/>
+            <jpa:id attribute-type="Long" visibile="true" name="id_utilizador" id="_146944860294348">
+                <jpa:column unique="true" nullable="true" insertable="true" updatable="true" length="255" precision="0" scale="0"/>
+                <jpa:generated-value strategy="AUTO"/>
+            </jpa:id>
+        </jpa:attributes>
+    </jpa:entity>
+    <jpa:entity xre="false" sm="false" abs="false" class="Inquerito" visibile="true" minimized="false" rootElement="_146944858615347" id="_1469451184467">
+        <jpa:attributes>
+            <basic attribute-type="java.sql.Date" visibile="true" name="data_inicio" id="_146945125463557"/>
+            <basic attribute-type="java.sql.Date" visibile="true" name="data_fim" id="_146945125499558"/>
+            <basic attribute-type="String" visibile="true" name="titulo" id="_146945125537159"/>
+            <basic attribute-type="java.sql.Time" visibile="true" name="hora_inicio" id="_146945125571560"/>
+            <basic attribute-type="java.sql.Time" visibile="true" name="hora_fim" id="_146945157348061"/>
+            <basic attribute-type="java.sql.Date" visibile="true" name="data_criacao" id="_146945157395962"/>
+            <many-to-one optional="true" primaryKey="false" connected-entity-id="_1469448602943" visibile="true" name="utilizador" id="_146945175856563"/>
+            <jpa:id attribute-type="Long" visibile="true" name="id_inquerito" id="_146945118446755">
+                <jpa:column unique="true" nullable="true" insertable="true" updatable="true" length="255" precision="0" scale="0"/>
+                <jpa:generated-value strategy="AUTO"/>
+            </jpa:id>
+        </jpa:attributes>
+    </jpa:entity>
+    <jpa:entity xre="false" sm="false" abs="false" class="Questao" visibile="true" minimized="false" rootElement="_146944858615347" id="_1469451791469">
+        <jpa:attributes>
+            <basic attribute-type="Integer" visibile="true" name="ordem" id="_146945185394866"/>
+            <basic attribute-type="String" visibile="true" name="texto" id="_146945185430067"/>
+            <many-to-one optional="true" primaryKey="false" connected-entity-id="_1469451184467" visibile="true" name="inquerito" id="_146945193408468"/>
+            <jpa:id attribute-type="Long" visibile="true" name="id_questao" id="_146945179146964">
+                <jpa:column unique="true" nullable="true" insertable="true" updatable="true" length="255" precision="0" scale="0"/>
+                <jpa:generated-value strategy="AUTO"/>
+            </jpa:id>
+        </jpa:attributes>
+    </jpa:entity>
+    <jpa:entity xre="false" sm="false" abs="false" class="Tipo_Utilizador" visibile="true" minimized="false" rootElement="_146944858615347" id="_1469451944554">
+        <jpa:attributes>
+            <basic attribute-type="String" visibile="true" name="descricao" id="_146945198857871"/>
+            <jpa:id attribute-type="Long" visibile="true" name="id_tipo_utilizador" id="_146945194455569">
+                <jpa:column unique="true" nullable="true" insertable="true" updatable="true" length="255" precision="0" scale="0"/>
+                <jpa:generated-value strategy="AUTO"/>
+            </jpa:id>
+        </jpa:attributes>
+    </jpa:entity>
+    <jpa:entity xre="false" sm="false" abs="false" class="Utilizador_Inquerito" visibile="true" minimized="false" rootElement="_146944858615347" id="_1469452062625">
+        <jpa:attributes>
+            <many-to-one optional="true" primaryKey="false" connected-entity-id="_1469448602943" visibile="true" name="utilizador" id="_146945223986479"/>
+            <many-to-one optional="true" primaryKey="false" connected-entity-id="_1469451184467" visibile="true" name="inquerito" id="_146945225222480"/>
+            <jpa:id attribute-type="Long" visibile="true" name="id_Utilizador_inquerito" id="_146945206262674">
+                <jpa:column unique="true" nullable="true" insertable="true" updatable="true" length="255" precision="0" scale="0"/>
+                <jpa:generated-value strategy="AUTO"/>
+            </jpa:id>
+        </jpa:attributes>
+    </jpa:entity>
+    <jpa:entity xre="false" sm="false" abs="false" class="Respostas_Possiveis" visibile="true" minimized="false" rootElement="_146944858615347" id="_1469452278255">
+        <jpa:attributes>
+            <basic attribute-type="String" visibile="true" name="texto" id="_146945233711085"/>
+            <many-to-one optional="true" primaryKey="false" connected-entity-id="_1469451791469" visibile="true" name="questao" id="_146945237499186"/>
+            <jpa:id attribute-type="Long" visibile="true" name="id_respostas_possiveis" id="_146945227825781">
+                <jpa:column unique="true" nullable="true" insertable="true" updatable="true" length="255" precision="0" scale="0"/>
+                <jpa:generated-value strategy="AUTO"/>
+            </jpa:id>
+        </jpa:attributes>
+    </jpa:entity>
+    <jpa:entity xre="false" sm="false" abs="false" class="Respostas_Dadas" visibile="true" minimized="false" rootElement="_146944858615347" id="_1469452280328">
+        <jpa:attributes>
+            <many-to-one optional="true" primaryKey="false" connected-entity-id="_1469452062625" visibile="true" name="utilizador_Inquerito" id="_146945249080587"/>
+            <jpa:id attribute-type="Long" visibile="true" name="id_respostas_dadas" id="_146945228033083">
+                <jpa:column unique="true" nullable="true" insertable="true" updatable="true" length="255" precision="0" scale="0"/>
+                <jpa:generated-value strategy="AUTO"/>
+            </jpa:id>
+        </jpa:attributes>
+    </jpa:entity>
+    <jpa:diagram>
+        <plane elementRef="_146944858615347">
+            <shape elementRef="_1469448602943">
+                <Bounds x="29.0" y="62.0" width="149.0" height="210.0"/>
+            </shape>
+            <shape elementRef="_1469451184467">
+                <Bounds x="247.0" y="62.0" width="146.0" height="231.0"/>
+            </shape>
+            <shape elementRef="_1469451791469">
+                <Bounds x="494.0" y="62.0" width="144.0" height="147.0"/>
+            </shape>
+            <shape elementRef="_1469451944554">
+                <Bounds x="29.0" y="423.0" width="180.0" height="92.0"/>
+            </shape>
+            <shape elementRef="_1469452062625">
+                <Bounds x="315.0" y="368.0" width="206.0" height="113.0"/>
+            </shape>
+            <shape elementRef="_1469452278255">
+                <Bounds x="669.0" y="220.0" width="219.0" height="126.0"/>
+            </shape>
+            <shape elementRef="_1469452280328">
+                <Bounds x="625.0" y="402.0" width="200.0" height="92.0"/>
+            </shape>
+        </plane>
+    </jpa:diagram>
+</jpa:entity-mappings>
