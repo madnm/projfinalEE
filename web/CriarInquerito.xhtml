@@ -1,51 +1,43 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:p="http://primefaces.org/ui">
-
-    <f:view contentType="text/html">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:p="http://primefaces.org/ui" dir="ltr"><head></head><body contenteditable="true"><f:view contenttype="text/html">
         <h:head>
-            <f:facet name="first">
-                <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
-                <title>PrimeFaces</title>
-            </f:facet>
-        </h:head>
+        <title> Dados utilizador </title>
+    </h:head>
+    <h:body>
+        <br>
+        <br>
+        Idade 
+        <br>
+        <br>
+        <input type="radio" name="a" value="(18-25)"> (18-25)
+        <br>
+        <input type="radio" name="a" value="(26-34)"> (26-34)
+        <br>
+        <input type="radio" name="a" value="(35-50)"> (35-50)
+        <br>
+        <input type="radio" name="a" value="(+50)"> (+50)
+        <br>   
+        <br>
+        Sexo
+        <br>   
+        <br>
+        <input type="radio" name="M" value="M"> M
+        <br>
+        <input type="radio" name="F" value="F"> F
+        <br>   
+        <br>
+        Area residencia
+        <br>   
+        <br>
+        <input type="radio" name="Norte" value="Norte"> Norte
+        <br>
+        <input type="radio" name="Centro" value="Centro"> Centro
+        <br>
+        <input type="radio" name="Sul" value="Sul"> Sul
+        <br>   
+        <br>
+        <input type="reset" value="Reset">
+        <input type="submit" value="Seguinte">
+    </h:body>
 
-        <h:body>
 
-            <p:layout fullPage="true">
-
-                <p:layoutUnit position="north" size="100" resizable="true" closable="true" collapsible="true">
-                    Header
-                </p:layoutUnit>
-
-                <p:layoutUnit position="south" size="100" closable="true" collapsible="true">
-                    Footer
-                </p:layoutUnit>
-
-                <p:layoutUnit position="west" size="175" header="Left" collapsible="true">
-                    <p:menu>
-                        <p:submenu label="Resources">
-                            <p:menuitem value="Demo" url="http://www.primefaces.org/showcase-labs/ui/home.jsf" />
-                            <p:menuitem value="Documentation" url="http://www.primefaces.org/documentation.html" />
-                            <p:menuitem value="Forum" url="http://forum.primefaces.org/" />
-                            <p:menuitem value="Themes" url="http://www.primefaces.org/themes.html" />
-
-                        </p:submenu>
-
-                    </p:menu>
-                </p:layoutUnit>
-
-                <p:layoutUnit position="center">
-                    Welcome to PrimeFaces
-                </p:layoutUnit>
-
-            </p:layout>
-
-        </h:body>
-
-    </f:view>
-</html>
-
+</f:view></body></html>
